@@ -7,7 +7,7 @@ export default defineNuxtConfig({
   modules: ['@vueuse/nuxt', 'nuxt-auth-utils'],
   routeRules: {
     '/api/fin-app/**': {
-      proxy: 'http://localhost:3086/api/**',
+      proxy: 'http://20.247.175.13:3086/api/fin-app/**',
     },
   },
 });
