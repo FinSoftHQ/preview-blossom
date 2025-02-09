@@ -123,9 +123,15 @@ importers:
       fin-ready:
         specifier: workspace:^
         version: link:../../core/fin_ready
+      mdul-camp:
+        specifier: workspace:^
+        version: link:../../modules/mdul_camp
       mdul-category:
         specifier: workspace:^
         version: link:../../modules/mdul_category
+      mdul-membership:
+        specifier: workspace:^
+        version: link:../../modules/mdul_membership
       mdul-products:
         specifier: workspace:^
         version: link:../../modules/mdul_products

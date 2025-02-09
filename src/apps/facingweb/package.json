@@ -13,7 +13,9 @@
   "dependencies": {
     "@pinia/nuxt": "catalog:",
     "fin-ready": "workspace:^",
+    "mdul-camp": "workspace:^",
     "mdul-category": "workspace:^",
+    "mdul-membership": "workspace:^",
     "mdul-products": "workspace:^",
     "nuxt": "catalog:",
     "pinia": "catalog:",

@@ -18,10 +18,10 @@
 const { data: navigation } = await useAsyncData('navigation', () => fetchContentNavigation(), { default: () => [] })
 
 const headlinks = [{
-  label: 'Camp',
+  label: 'จัดการรุ่น',
   to: '/camp'
 }, {
-  label: 'Register',
+  label: 'ลงทะเบียน',
   to: '/membership'
 }, 
 // {
