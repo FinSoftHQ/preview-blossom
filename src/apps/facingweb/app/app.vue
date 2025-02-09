@@ -21,11 +21,11 @@ const headlinks = [{
   label: 'Docs',
   to: '/docs'
 }, {
-  label: 'Pricing',
-  to: '/pricing'
+  label: 'Category',
+  to: '/category'
 }, {
-  label: 'Blog',
-  to: '/blog'
+  label: 'Products',
+  to: '/products'
 }]
 
 const footers = [{
