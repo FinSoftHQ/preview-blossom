@@ -23,7 +23,16 @@ import RealmRolesEachModalEdit from '../Roles/Each/ModalEdit.vue';
 import RealmRolesEachDefault from '../Roles/Each/Default.vue';
 import RealmRolesSharedCustomView from '../Roles/Shared/CustomView.vue';
 import RealmRolesSharedResult from '../Roles/Shared/Result.vue';
+// เก้า
+import RealmRolesEachCamp from '../Roles/Each/Camp.vue';
+import RealmRolesCustomAddCar from '../Roles/Custom/AddCar.vue';
+import RealmRolesCustomAddBed from '../Roles/Custom/AddBed.vue';
+import RealmRolesCustomDocument  from '../Roles/Custom/Document.vue';
+import RealmRolesWebPrint from '../Roles/Custom/WebPrint.vue';
 
+// กี้
+
+// เจน
 const baseRoles = useBaseRoles();
 const roles: Record<string, any> = {
   ...baseRoles,
@@ -34,6 +43,15 @@ const roles: Record<string, any> = {
   result: RealmRolesSharedResult,
   customview: RealmRolesSharedCustomView,
   default: RealmRolesEachDefault,
+   // เก้า
+   camp: RealmRolesEachCamp,
+  addcar: RealmRolesCustomAddCar,
+  addbed: RealmRolesCustomAddBed,
+  document: RealmRolesCustomDocument,
+  webprint: RealmRolesWebPrint,
+  // กี้
+
+  // เจน
 };
 
 const props = defineProps<{
