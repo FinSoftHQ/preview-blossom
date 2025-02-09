@@ -1,0 +1,10 @@
+[[redirects]]
+  from = "/api/fin-app/*"
+  to = "http://20.247.175.13:3086/api/fin-app/:splat"
+  status = 200
+  force = true
+
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
