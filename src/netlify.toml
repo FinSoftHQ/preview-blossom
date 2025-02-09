@@ -5,8 +5,8 @@
   force = true
 
 [[redirects]]
-  from = "/camp"
-  to = "/camp"
+  from = "/camp/*"
+  to = "/camp/:splat"
   status = 200
 
 [[redirects]]
