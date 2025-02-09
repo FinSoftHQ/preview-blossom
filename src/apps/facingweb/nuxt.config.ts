@@ -9,7 +9,7 @@ export default defineNuxtConfig({
 
   nitro: {
     prerender: {
-      routes: ['/', '/docs', '/docs/getting-started'],
+      routes: ['/', '/docs', '/docs/getting-started', '/camp', '/membership'],
       crawlLinks: false,
     },
   },
