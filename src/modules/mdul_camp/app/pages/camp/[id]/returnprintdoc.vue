@@ -1,12 +1,6 @@
 <template>
-  <div class="flex justify-end items-center">
-    <UButton @click="printPage">Print</UButton>
-  </div>
-  <div
-    class="a4-page"
-    ref="printableArea"
-  >
-    <RealmCardList :pageId="pageMemDef.pageId">
+  <RealmPageList :pageId>
+    <RealmCardList :pageId="{ module: 'membership', realm: 'list', page: 'root' }">
       <template #default="{ wrapped, error, loading }">
         <div class="overflow-x-auto p-4 text-xs">
           <h2 class="text-xl font-bold text-center py-2">
@@ -104,7 +98,7 @@
         </div>
       </template>
     </RealmCardList>
-  </div>
+  </RealmPageList>
 </template>
 
 <script setup lang="ts">
@@ -115,60 +109,4 @@ const pageId = {
   page: 'returnprintdoc',
 };
 
-interface Member {
-  id: number;
-  name: string;
-  gender: string;
-  age?: number;
-  hasPhoto: boolean;
-  transport: {
-    bus: boolean;
-    stayExtraNight: boolean;
-    ownVehicle: boolean;
-    returnBus: boolean;
-  };
-  meals: {
-    count: number;
-    note?: string;
-  };
-}
-
-
-const printableArea = ref<HTMLDivElement | null>(null);
-
-const printPage = () => {
-  const printContents = printableArea.value?.innerHTML;
-  const originalContents = document.body.innerHTML;
-
-  if (printContents) {
-    document.body.innerHTML = printContents;
-    window.print();
-    document.body.innerHTML = originalContents;
-    window.location.reload();
-  }
-};
-
-const pageMemDef = usePageDefinition({ module: 'membership', realm: 'list', page: 'root' });
 </script>
-
-
-<style scoped>
-.a4-page {
-  width: 297mm;
-  min-height: 210mm;
-  padding: 20mm;
-  margin: 10mm auto;
-  border: 1px solid #d3d3d3;
-  border-radius: 5px;
-  background: white;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-}
-
-@media print {
-  .a4-page {
-    margin: 0;
-    box-shadow: none;
-    page-break-after: always;
-  }
-}
-</style>
