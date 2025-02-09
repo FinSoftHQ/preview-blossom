@@ -18,15 +18,17 @@
 const { data: navigation } = await useAsyncData('navigation', () => fetchContentNavigation(), { default: () => [] })
 
 const headlinks = [{
-  label: 'Docs',
-  to: '/docs'
+  label: 'Camp',
+  to: '/camp'
 }, {
-  label: 'Category',
-  to: '/category'
-}, {
-  label: 'Products',
-  to: '/products'
-}]
+  label: 'Register',
+  to: '/membership'
+}, 
+// {
+//   label: 'Products',
+//   to: '/products'
+// }
+]
 
 const footers = [{
   label: 'Resources',
