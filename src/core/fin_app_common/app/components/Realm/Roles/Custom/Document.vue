@@ -26,12 +26,12 @@ const docmenu = ref([
     to: { name: 'camp.each.webprint'},
   },
   {
-    title: 'เจ้าภาพผู้ใหญ่และคนเก่า',
+    title: 'เจ้าภาพผู้ใหญ่และคนเก่า+รูป',
     icon: 'i-mdi-paper-outline',
     to: { name: 'camp.each.superiorphtprint'},
   },
   {
-    title: 'เจ้าภาพผู้ใหญ่และคนเก่า+รูป',
+    title: 'เจ้าภาพผู้ใหญ่และคนเก่า',
     icon: 'i-mdi-paper-outline',
     to: { name: 'camp.each.superiortbprint'},
   },
