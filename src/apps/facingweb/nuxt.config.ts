@@ -22,4 +22,11 @@ export default defineNuxtConfig({
       ablyKey: 'NUXT_LIVE_SYNC_ABLY_KEY',
     },
   },
+
+  routeRules: {
+    '/api/fin-app/**': {
+      proxy: 'http://20.247.175.13:3086/api/fin-app/**',
+    },
+  },
+
 });
