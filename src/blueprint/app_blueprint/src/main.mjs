@@ -302,7 +302,6 @@ export const appModules = defineAppModules({
       superiorphtprint: {
         entity: data.camp,
         role: 'webprint',
-        component: 'webprint',
       },
       returnprintdoc: {
         entity: data.camp,
