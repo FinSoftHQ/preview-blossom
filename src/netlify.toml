@@ -5,10 +5,6 @@
   force = true
 
 [[redirects]]
-  from = "/camp/*"
-  to = "/camp/:splat"
-
-[[redirects]]
   from = "/*"
   to = "/index.html"
   status = 200
