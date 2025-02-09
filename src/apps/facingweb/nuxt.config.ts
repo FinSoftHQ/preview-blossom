@@ -5,7 +5,7 @@ export default defineNuxtConfig({
   future: {
     compatibilityVersion: 4,
   },
-  extends: ['fin-ready'],
+  extends: ['fin-ready', 'mdul-category', 'mdul-products'],
 
   nitro: {
     prerender: {
