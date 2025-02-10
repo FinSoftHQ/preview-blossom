@@ -31,23 +31,56 @@
     </NuxtLink>
   </div>
 
-  <UDashboardPage>
-    <UDashboardPanel grow>
-      <UDashboardToolbar>
-        <template #right>
-          <USelectMenu v-model="selectedColumns"
-            icon="i-heroicons-adjustments-horizontal-solid"
-            :options="columns"
-            multiple
-            class="hidden lg:block">
-            <template #label>
-              แสดงผลตาราง
+
+  <RealmCardList :pageId="pageMemDef.pageId">
+    <template #default="{ wrapped, entries, resolver }">
+      <UDashboardPage>
+        <UDashboardPanel grow>
+          <UDashboardNavbar title="รายชื่อผู้ลงทะเบียน"
+            :badge="`${wrapped.data.length} คน`">
+            <template #badge>
+              <div class="flex items-center gap-2">
+                <UBadge :label="`ทั้งหมด ${wrapped.data.length} คน`"
+                  color="green"
+                  variant="subtle"
+                  class="capitalize" />
+                <UBadge :label="`ชาย ${wrapped.data.filter(item => item.sex === 'male').length} คน`"
+                  color="blue"
+                  variant="subtle"
+                  class="capitalize" />
+                <UBadge :label="`หญิง ${wrapped.data.filter(item => item.sex === 'female').length} คน`"
+                  color="pink"
+                  variant="subtle"
+                  class="capitalize" />
+              </div>
             </template>
-          </USelectMenu>
-        </template>
-      </UDashboardToolbar>
-      <RealmCardList :pageId="pageMemDef.pageId">
-        <template #default="{ wrapped, entries, resolver }">
+          </UDashboardNavbar>
+          <UDashboardToolbar>
+            <template #left>
+            <USelectMenu v-model="selectedStatuses"
+              icon="i-heroicons-check-circle"
+              placeholder="สถานะ"
+              multiple
+              :ui-menu="{ option: { base: 'capitalize' } }" />
+            <USelectMenu v-model="selectedRegions"
+              icon="i-heroicons-map"
+              placeholder="เลือกภาค"
+              multiple
+              :ui-menu="{ option: { base: 'capitalize' } }" />
+          </template>
+          
+            <template #right>
+              <USelectMenu v-model="selectedColumns"
+                icon="i-heroicons-adjustments-horizontal-solid"
+                :options="columns"
+                multiple
+                class="hidden lg:block">
+                <template #label>
+                  แสดงผลตาราง
+                </template>
+              </USelectMenu>
+            </template>
+          </UDashboardToolbar>
           <UTable @select="selectMember"
             :rows="wrapped.data"
             :columns="selectedColumns">
@@ -77,10 +110,11 @@
               </UBadge>
             </template>
           </UTable>
-        </template>
-      </RealmCardList>
-    </UDashboardPanel>
-  </UDashboardPage>
+        </UDashboardPanel>
+      </UDashboardPage>
+    </template>
+  </RealmCardList>
+
 </template>
 
 <script setup lang="ts">
@@ -178,6 +212,8 @@ const calculateAge = (birthdate: string) => {
 };
 
 const selectedColumns = ref(columns)
+const selectedStatuses = ref([])
+const selectedRegions = ref([])
 
 const pageMemDef = usePageDefinition({ module: 'membership', realm: 'list', page: 'root' });
 
