@@ -1,12 +1,6 @@
 <template>
-  <div class="flex justify-end items-center">
-    <UButton @click="printPage">Print</UButton>
-  </div>
-  <div
-    class="a4-page"
-    ref="printableArea"
-  >
-    <RealmCardList :pageId="pageMemDef.pageId">
+  <RealmPageList :pageId>
+    <RealmCardList :pageId="{ module: 'membership', realm: 'list', page: 'root' }">
       <template #default="{ wrapped, error, loading }">
         <div class="overflow-x-auto p-4">
           <h2 class="text-lg font-bold text-center mb-2">เขาใหญ่ รุ่น 190 | 5 - 11 พ.ค. 67</h2>
@@ -26,8 +20,7 @@
                 :key="row.id"
               >
                 <td class="border px-2 py-1 text-center">{{ index + 1 }}</td>
-                <td class="border px-2 py-1">{{ row.firstname }}</td>
-                <td class="border px-2 py-1">{{ row.surname }}</td>
+                <td class="border px-2 py-1">{{ row.firstname }} {{ row.surname }}</td>
                 <td class="border px-2 py-1 text-center">{{ row.sex }}</td>
                 <td class="border px-2 py-1 text-center">{{ row.birthdate }}</td>
                 <td class="border px-2 py-1 text-center">{{ row.region }}</td>
@@ -42,7 +35,8 @@
         </div>
       </template>
     </RealmCardList>
-  </div>
+  </RealmPageList>
+
 </template>
 
 <script setup lang="ts">
@@ -61,10 +55,6 @@ const columns = [
   {
     key: 'firstname',
     label: 'ชื่อ'
-  },
-  {
-    key: 'surname',
-    label: 'นามสกุล'
   },
   {
     key: 'sex',
@@ -99,41 +89,4 @@ const columns = [
     label: 'ที่นั่งสมาชิก'
   },
 ];
-
-const printableArea = ref<HTMLDivElement | null>(null);
-
-const printPage = () => {
-  const printContents = printableArea.value?.innerHTML;
-  const originalContents = document.body.innerHTML;
-
-  if (printContents) {
-    document.body.innerHTML = printContents;
-    window.print();
-    document.body.innerHTML = originalContents;
-    window.location.reload();
-  }
-};
-
-const pageMemDef = usePageDefinition({ module: 'membership', realm: 'list', page: 'root' });
 </script>
-
-<style scoped>
-.a4-page {
-  width: 297mm;
-  min-height: 210mm;
-  padding: 20mm;
-  margin: 10mm auto;
-  border: 1px solid #d3d3d3;
-  border-radius: 5px;
-  background: white;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-}
-
-@media print {
-  .a4-page {
-    margin: 0;
-    box-shadow: none;
-    page-break-after: always;
-  }
-}
-</style>

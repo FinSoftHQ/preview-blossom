@@ -297,7 +297,7 @@ export const appModules = defineAppModules({
       },
       superiortbprint: {
         entity: data.camp,
-        role: 'webprint',
+        role: 'webprint',        
       },
       superiorphtprint: {
         entity: data.camp,
