@@ -1,0 +1,142 @@
+{
+  "schemas": [
+    [      
+      {
+        "name": "fullname",
+        "type": "text",
+        "content": "ดาดาว   บางกอก",
+        "position": {
+          "x": 48.15,
+          "y": 250.83
+        },
+        "width": 107.71,
+        "height": 10,
+        "rotate": 0,
+        "alignment": "left",
+        "verticalAlignment": "bottom",
+        "fontSize": 16,
+        "lineHeight": 1,
+        "characterSpacing": 0,
+        "fontColor": "#000000",
+        "backgroundColor": "",
+        "opacity": 1,
+        "strikethrough": false,
+        "underline": false,
+        "required": false,
+        "readOnly": false
+      },
+      {
+        "name": "age",
+        "type": "text",
+        "content": "61",
+        "position": {
+          "x": 27.46,
+          "y": 264.16
+        },
+        "width": 15.62,
+        "height": 10,
+        "rotate": 0,
+        "alignment": "left",
+        "verticalAlignment": "bottom",
+        "fontSize": 18,
+        "lineHeight": 1,
+        "characterSpacing": 0,
+        "fontColor": "#000000",
+        "backgroundColor": "",
+        "opacity": 1,
+        "strikethrough": false,
+        "underline": false,
+        "required": false,
+        "readOnly": false
+      },
+      {
+        "name": "region",
+        "type": "text",
+        "content": "นครหลวง ต",
+        "position": {
+          "x": 69.47,
+          "y": 264.16
+        },
+        "width": 39.18,
+        "height": 10,
+        "rotate": 0,
+        "alignment": "left",
+        "verticalAlignment": "bottom",
+        "fontSize": 18,
+        "lineHeight": 1,
+        "characterSpacing": 0,
+        "fontColor": "#000000",
+        "backgroundColor": "",
+        "opacity": 1,
+        "strikethrough": false,
+        "underline": false,
+        "required": false,
+        "readOnly": false
+      },
+      {
+        "name": "group",
+        "type": "text",
+        "content": " A",
+        "position": {
+          "x": 125.77,
+          "y": 264.16
+        },
+        "width": 11.93,
+        "height": 10,
+        "rotate": 0,
+        "alignment": "left",
+        "verticalAlignment": "bottom",
+        "fontSize": 18,
+        "lineHeight": 1,
+        "characterSpacing": 0,
+        "fontColor": "#000000",
+        "backgroundColor": "",
+        "opacity": 1,
+        "strikethrough": false,
+        "underline": false,
+        "required": false,
+        "readOnly": false
+      },
+      {
+        "name": "campdate",
+        "type": "text",
+        "content": "วันที่",
+        "position": {
+          "x": 28.88,
+          "y": 275.49
+        },
+        "width": 74.9,
+        "height": 10,
+        "rotate": 0,
+        "alignment": "left",
+        "verticalAlignment": "bottom",
+        "fontSize": 18,
+        "lineHeight": 1,
+        "characterSpacing": 0,
+        "fontColor": "#000000",
+        "backgroundColor": "",
+        "opacity": 1,
+        "strikethrough": false,
+        "underline": false,
+        "required": false,
+        "readOnly": false
+      },
+      {
+        "name": "image",
+        "type": "text",
+        "content": "",
+        "position": {
+          "x": 161.92,
+          "y": 249.89
+        },
+        "width": 37.09,
+        "height": 37.62,
+        "rotate": 0,
+        "opacity": 1,
+        "required": false
+      }
+    ]
+  ],
+  "basePdf": "",
+  "pdfmeVersion": "5.3.2"
+}
