@@ -55,15 +55,34 @@ const docmenu = ref([
     to: { name: 'camp.each.returnprintdoc' },
   },
   {
-    title: 'กลุ่มหลัก',
+    title: 'รายชื่อกลุ่มหลัก',
     icon: 'i-mdi-paper-outline',
-    to: { name: 'camp.each.superiortbprint' },
+    to: '',
   },
   {
-    title: 'กลุ่มติว',
+    title: 'รายชื่อกลุ่มติว',
     icon: 'i-mdi-paper-outline',
-    to: { name: 'camp.each.superiortbprint' },
+    to: '',
   },
-
+  {
+    title: 'ฟอร์มผลประเมิน',
+    icon: 'i-mdi-paper-outline',
+    to: { name: 'camp.each.evaluationformprint' },
+  },
+  {
+    title: 'ผังที่นั่งปฏิบัติธรรม',
+    icon: 'i-mdi-paper-outline',
+    to: '',
+  },
+  {
+    title: 'ผังที่นั่งรถ',
+    icon: 'i-mdi-paper-outline',
+    to: '',
+  },
+  {
+    title: 'ผังที่ห้องพัก',
+    icon: 'i-mdi-paper-outline',
+    to: '',
+  }, 
 ])
 </script>

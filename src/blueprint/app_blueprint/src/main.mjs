@@ -360,7 +360,7 @@ export const appModules = defineAppModules({
       },
       evaluationformprint: {
         entity: data.camp,
-        role: 'webprint',
+        role: 'print',
       },
       pdfme: {
         entity: data.camp,
