@@ -189,9 +189,10 @@ export const appModules = defineAppModules({
     dataPath: 'membership',
     list: {
       root: data.membership,
-      userinfor: data.membership,
-      datahammapractice: data.membership,
-      history: data.membership,
+      memberinfo: data.membership,
+      dharmacamp: data.membership,
+      registered: data.membership,
+      payment: data.membership,
       closed: data.membership,
     },
     create: {
