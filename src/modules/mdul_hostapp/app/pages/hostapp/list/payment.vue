@@ -4,9 +4,9 @@
 
 <script setup lang="ts">
 definePageMeta({
-  name: `hostapp.list.history`,
+  name: `hostapp.list.payment`,
 });
 const pageId = {
-  page: 'history',
+  page: 'payment',
 };
 </script>

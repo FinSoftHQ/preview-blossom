@@ -4,9 +4,9 @@
 
 <script setup lang="ts">
 definePageMeta({
-  name: `hostapp.list.datahammapractice`,
+  name: `hostapp.list.registered`,
 });
 const pageId = {
-  page: 'datahammapractice',
+  page: 'registered',
 };
 </script>

@@ -188,10 +188,32 @@ export const appModules = defineAppModules({
     label: 'HostApp',
     dataPath: 'membership',
     list: {
-      root: data.membership,
-      userinfor: data.membership,
-      datahammapractice: data.membership,
-      history: data.membership,
+      root: {
+        entity: data.membership,
+        post: true,
+        role: 'menu',
+        actions: [{
+          title: 'ข้อมูลสวนตัว',
+          to: { page: 'memberinfo' },
+          icon: 'i-mdi-user',
+        },{
+          title: 'ค่ายปฎิบัติธรรม',
+          to: { page: 'dharmacamp' },
+          icon: 'i-mdi-table-search',
+        },{
+          title: 'ค่ายที่ลงทะเบียน',
+          to: { page: 'registered' },
+          icon: 'i-mdi-calendar-cursor',
+        },{
+          title: 'ชำระเงิน',
+          to: { page: 'payment' },
+          icon: 'i-mdi-credit-card',
+        },],
+      },
+      memberinfo: data.membership,
+      dharmacamp: data.membership,
+      registered: data.membership,
+      payment: data.membership,
       closed: data.membership,
     },
     create: {
@@ -256,11 +278,11 @@ export const appModules = defineAppModules({
         },
         {
           label: 'ลงทะเบียนเจ้าภาพ',
-          to: { name: 'membership.create.root' }, 
+          to: { name: 'membership.create.root' },
         },
         {
           label: 'เอกสาร',
-          to: { page: 'document' }, 
+          to: { page: 'document' },
         },
         {
           label: 'จัดผังรถ',
