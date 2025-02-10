@@ -188,7 +188,12 @@ export const appModules = defineAppModules({
     label: 'HostApp',
     dataPath: 'membership',
     list: {
-      root: data.membership,
+      root: {
+        entity: data.membership,
+        post: true,
+        role: 'menu',
+        actions: ['memberinfo'],
+      },
       memberinfo: data.membership,
       dharmacamp: data.membership,
       registered: data.membership,
@@ -257,11 +262,11 @@ export const appModules = defineAppModules({
         },
         {
           label: 'ลงทะเบียนเจ้าภาพ',
-          to: { name: 'membership.create.root' }, 
+          to: { name: 'membership.create.root' },
         },
         {
           label: 'เอกสาร',
-          to: { page: 'document' }, 
+          to: { page: 'document' },
         },
         {
           label: 'จัดผังรถ',
