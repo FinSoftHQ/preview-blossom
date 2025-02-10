@@ -47,8 +47,29 @@ export const choices = defineChoices({
     n3: 'นครหลวง 3',
     n4: 'นครหลวง 4',
     n5: 'นครหลวง 5',
+    n6: 'นครหลวง 6',
+    n7: 'นครหลวง 7',
+    n8: 'นครหลวง 8',
+    n9: 'นครหลวง 9',
+    n10: 'นครหลวง 10',
+    n11: 'นครหลวง 11',
+    n12: 'นครหลวง 12',
+    n14: 'นครหลวง 14',
+    n15: 'นครหลวง 15',
+    n16: 'นครหลวง 16',
+    n17: 'นครหลวง 17',
+    n18: 'นครหลวง 18',
+    n19: 'นครหลวง 19',
+    jw: 'ภาคจักรวาล',
     pt51: 'ภูธร 51',
     pt52: 'ภูธร 52',
+    pt53: 'ภูธร 53',
+    pt54: 'ภูธร 54',
+    pt56: 'ภูธร 56',
+    pt57: 'ภูธร 57',
+    pt58: 'ภูธร 58',
+    pt59: 'ภูธร 59',
+    dmb: 'กองอบรมสมาธิ (ดอกไม้บาน)',
   },
 
   sex: {
@@ -923,6 +944,111 @@ export const data = defineEntities({
           },
         ],
       }
+    ],
+  },
+
+  mentor: {
+    root: [
+      {
+        model: 'fname',
+        label: 'ชื่อ',
+        spec: {},
+        component: 'text',
+      },
+      {
+        model: 'lname',
+        label: 'สกุล',
+        spec: {},
+        component: 'text',
+      },
+      {
+        model: 'nickname',
+        label: 'ชื่อเล่น',
+        spec: {},
+        component: 'text',
+      },
+      {
+        model: 'age',
+        label: 'อายุ',
+        spec: {},
+        component: 'text',
+      },
+    ],
+    sub: [
+      {
+        name: 'code',
+        component: 'entry',
+        fields: [
+          {
+            model: 'qrCode',
+            label: 'QR Code',
+            spec: {},
+            component: 'text',
+          },
+          {
+            model: 'upcCode',
+            label: 'UPC Code',
+            spec: {},
+            component: 'text',
+          },
+        ],
+      },
+    ],
+  },
+
+  coordinator: {
+    root: [
+      {
+        model: 'fname',
+        label: 'ชื่อ',
+        spec: {},
+        component: 'text',
+      },
+      {
+        model: 'lname',
+        label: 'สกุล',
+        spec: {},
+        component: 'text',
+      },
+      {
+        model: 'nickname',
+        label: 'ชื่อเล่น',
+        spec: {},
+        component: 'text',
+      },     
+      {
+        model: 'age',
+        label: 'อายุ',
+        spec: {},
+        component: 'text',
+      },
+      {
+        model: 'zone',
+        label: 'ภาค',
+        spec: {},
+        component: 'select',
+        choices: choices.regionStates,
+      },
+    ],
+    sub: [
+      {
+        name: 'code',
+        component: 'entry',
+        fields: [
+          {
+            model: 'qrCode',
+            label: 'QR Code',
+            spec: {},
+            component: 'text',
+          },
+          {
+            model: 'upcCode',
+            label: 'UPC Code',
+            spec: {},
+            component: 'text',
+          },
+        ],
+      },
     ],
   },
 });
