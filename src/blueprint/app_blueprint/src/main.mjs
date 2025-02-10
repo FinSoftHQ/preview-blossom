@@ -62,6 +62,10 @@ const steps = defineSteps({
     managegrouptutor: 'กำหนดกลุ่ม',
     editgrouptutor: 'จัดกลุ่ม',
   },
+  setseat: {
+    manageseat: 'กำหนดผัง',
+    editseat: 'จัดที่นั่ง',
+  },
 });
 
 export const appModules = defineAppModules({
@@ -263,11 +267,28 @@ export const appModules = defineAppModules({
           to: { page: 'document' }, 
         },
         {
+          label: 'จัดที่นั่งปฎิบัติธรรม',
+          to: { page: 'manageseat' },
+        }, 
+        {
           label: 'จัดผังรถ',
           to: { page: 'managecar' },
-        }, {
+        }, 
+        {
           label: 'จัดผังที่พัก',
           to: { page: 'managebed' },
+        },
+        {
+          label: 'จัดกลุ่มหลัก',
+          to: { page: 'managegroup' },
+        },
+        {
+          label: 'จัดกลุ่มติว',
+          to: { page: 'managegrouptutor' },
+        },
+        {
+          label: 'จัดเจ้าภาพผู้ใหญ่',
+          to: { page: 'managegroupsenior' },
         },
         ],
       },
@@ -322,6 +343,62 @@ export const appModules = defineAppModules({
       pdfme: {
         entity: data.camp,
         role: 'pdfme',
+      },
+      // เพิ่มมาใหม่
+      editgroup: {
+        entity: data.camp,
+        post: '.',
+        steps: steps.setgroup,
+      },
+      managegroup: {
+        entity: data.camp,
+        post: true,
+        role: 'stepedit',
+        steps: steps.setgroup,
+        subName: 'setgroup',
+      },
+      groupreport: {
+        entity: data.camp,
+        post: true,
+        role: 'webprint',
+      },
+      editgrouptutor: {
+        entity: data.camp,
+        post: '.',
+        steps: steps.setgroup,
+      },
+      managegrouptutor: {
+        entity: data.camp,
+        post: true,
+        role: 'stepedit',
+        steps: steps.setgrouptutor,
+        subName: 'setgroup',
+      },
+      groupreporttutor: {
+        entity: data.camp,
+        post: true,
+        role: 'webprint',
+      },
+      managegroupsenior: {
+        entity: data.camp,
+        post: true,
+        steps: steps.setgroup,
+      },
+      groupreportsenior: {
+        entity: data.camp,
+        post: true,
+        role: 'webprint',
+      },
+      editseat: {
+        entity: data.camp,
+        post: '.',
+        steps: steps.setseat,
+      },
+      manageseat: {
+        entity: data.camp,
+        post: true,
+        role: 'stepedit',
+        steps: steps.setseat,
       },
     },
   },
