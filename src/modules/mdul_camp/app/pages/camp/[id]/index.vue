@@ -30,37 +30,57 @@
       </UCard>
     </NuxtLink>
   </div>
-  <RealmCardList :pageId="pageMemDef.pageId">
-    <template #default="{ wrapped, entries, resolver }">
-      <UTable @select="selectMember" :rows="wrapped.data"
-        :columns="columns">
-        <template #num-data="{ row, index }">
-          <div class="flex items-center gap-3">
-            <span class="text-gray-900 dark:text-white font-medium">{{ index + 1 }} </span>
-          </div>
+
+  <UDashboardPage>
+    <UDashboardPanel grow>
+      <UDashboardToolbar>
+        <template #right>
+          <USelectMenu v-model="selectedColumns"
+            icon="i-heroicons-adjustments-horizontal-solid"
+            :options="columns"
+            multiple
+            class="hidden lg:block">
+            <template #label>
+              แสดงผลตาราง
+            </template>
+          </USelectMenu>
         </template>
-        <template #name-data="{ row }">
-          <div class="flex items-center gap-3">
-            <span class="text-gray-900 dark:text-white font-medium">{{ row.firstname }} {{ row.surname }}</span>
-          </div>
+      </UDashboardToolbar>
+      <RealmCardList :pageId="pageMemDef.pageId">
+        <template #default="{ wrapped, entries, resolver }">
+          <UTable @select="selectMember"
+            :rows="wrapped.data"
+            :columns="selectedColumns">
+            <template #num-data="{ row, index }">
+              <div class="flex items-center gap-3">
+                <span class="text-gray-900 dark:text-white font-medium">{{ index + 1 }} </span>
+              </div>
+            </template>
+            <template #name-data="{ row }">
+              <div class="flex items-center gap-3">
+                <span class="text-gray-900 dark:text-white font-medium">{{ row.firstname }} {{ row.surname }}</span>
+              </div>
+            </template>
+            <template #birthdate-data="{ row }">
+              <div class="flex items-center gap-3">
+                <span class="text-gray-900 dark:text-white font-medium">{{ row.birthdate ? calculateAge(row.birthdate) :
+                  0 }} ปี</span>
+              </div>
+            </template>
+            <template #status-data="{ row }">
+              <UBadge :label="row.status"
+                :color="row.payment === 'full' ? 'primary' : row.payment === 'deposit' ? 'orange' : 'red'"
+                variant="subtle"
+                class="capitalize"> <span v-if="row.payment === 'full'">ชำระเเล้ว</span>
+                <span v-else-if="row.payment === 'deposit'">มัดจำ</span>
+                <span v-else-if="row.payment === 'installment'">ค่างชำระ</span>
+              </UBadge>
+            </template>
+          </UTable>
         </template>
-        <template #birthdate-data="{ row }">
-          <div class="flex items-center gap-3">
-            <span class="text-gray-900 dark:text-white font-medium">{{ row.birthdate ? calculateAge(row.birthdate) : 0 }} ปี</span>
-          </div>
-        </template>
-        <template #status-data="{ row }">
-          <UBadge :label="row.status"
-            :color="row.payment === 'full' ? 'primary' : row.payment === 'deposit' ? 'orange' : 'red'"
-            variant="subtle"
-            class="capitalize"> <span v-if="row.payment === 'full'">ชำระเเล้ว</span>
-            <span v-else-if="row.payment === 'deposit'">มัดจำ</span>
-            <span v-else-if="row.payment === 'installment'">ค่างชำระ</span>
-          </UBadge>
-        </template>
-      </UTable>
-    </template>
-  </RealmCardList>
+      </RealmCardList>
+    </UDashboardPanel>
+  </UDashboardPage>
 </template>
 
 <script setup lang="ts">
@@ -73,6 +93,7 @@ const pageId = {
 
 const pageDef = usePageDefinition(pageId);
 const pageFunctions = usePageFunctions(pageDef);
+
 
 
 const columns = [{
@@ -98,9 +119,6 @@ const columns = [{
   key: 'status',
   label: 'สถานะการชำระ'
 },
-{
-  key: 'action',
-}
 ]
 
 const items = [
@@ -141,6 +159,7 @@ const items = [
   }
 ];
 
+
 const calculateAge = (birthdate: string) => {
   const birthYear = parseInt(birthdate.substring(0, 4));
   const birthMonth = parseInt(birthdate.substring(4, 6));
@@ -158,9 +177,9 @@ const calculateAge = (birthdate: string) => {
   return age;
 };
 
+const selectedColumns = ref(columns)
 
 const pageMemDef = usePageDefinition({ module: 'membership', realm: 'list', page: 'root' });
-
 
 function selectMember(item: any) {
   navigateTo({ name: pageFunctions.relativeName({ module: 'membership', realm: 'each', page: 'root' }), params: { id: item.id } });
