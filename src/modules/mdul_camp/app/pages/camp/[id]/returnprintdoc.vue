@@ -76,11 +76,15 @@
                 <td class="border px-2 py-1">{{ row.firstname }} {{ row.surname }}</td>
                 <td class="border px-2 py-1 text-center">{{ row.sex }}</td>
                 <td class="border px-2 py-1">{{ row.birthdate }}</td>
-                <td class="border px-2 py-1">{{ row.photo }}</td>
-                <td class="border px-2 py-1">{{ row.departureend }}</td>
-                <td class="border px-2 py-1">{{ row.departureend }}</td>
-                <td class="border px-2 py-1">{{ row.departureend }}</td>
-                <td class="border px-2 py-1">{{ row.departureend }}</td>
+                <td class="border px-2 py-1 text-center">
+                  <span v-if="row.photo">✔️</span>
+                  <span v-else>ไม่มี</span>
+                </td>
+                <td class="border px-2 py-1"></td>
+                <td class="border px-2 py-1"></td>
+                <td class="border px-2 py-1"></td>
+                <td class="border px-2 py-1"></td>
+                <td class="border px-2 py-1"></td>
                 <td class="border px-2 py-1"></td>
                 <td class="border px-2 py-1"></td>
               </tr>
