@@ -15,6 +15,8 @@ export const data = {
   camp: _data.camp,
   membership: _data.membership,
   register: _data.membership,
+  mentor: _data.mentor,
+  coordinator: _data.coordinator,
 };
 
 const steps = defineSteps({
@@ -32,7 +34,6 @@ const steps = defineSteps({
   },
   mobile: {
     root: 'ลงทะเบียนชื่อ',
-
     confirm: 'ยืนยันข้อมูล',
   },
   membership: {
@@ -606,4 +607,77 @@ export const appModules = defineAppModules({
     },
   },
 
+  mentor: {
+    label: 'พี่เลี้ยง',
+    list: {
+      root: data.mentor,
+      closed: data.mentor,
+    },
+    create: {
+      root: {
+        entity: data.mentor,
+        post: true,
+        role: 'stepedit',
+        steps: steps.rootconfirm,
+      },
+      confirm: {
+        entity: data.mentor,
+        post: true,
+        role: 'stepconfirm',
+        steps: steps.rootconfirm,
+      },
+    },
+    each: {
+      root: {
+        entity: data.mentor,
+        actions: ['Edit'],
+      },
+      edit: {
+        entity: data.mentor,
+        post: true,
+        role: 'edit',
+      },
+      close: {
+        entity: data.mentor,
+        role: 'confirm',
+      },
+    },
+  },
+
+  coordinator: {
+    label: 'ผู้ประสานงาน',
+    list: {
+      root: data.coordinator,
+      closed: data.coordinator,
+    },
+    create: {
+      root: {
+        entity: data.coordinator,
+        post: true,
+        role: 'stepedit',
+        steps: steps.rootconfirm,
+      },
+      confirm: {
+        entity: data.coordinator,
+        post: true,
+        role: 'stepconfirm',
+        steps: steps.rootconfirm,
+      },
+    },
+    each: {
+      root: {
+        entity: data.coordinator,
+        actions: ['Edit'],
+      },
+      edit: {
+        entity: data.coordinator,
+        post: true,
+        role: 'edit',
+      },
+      close: {
+        entity: data.coordinator,
+        role: 'confirm',
+      },
+    },
+  },
 });
