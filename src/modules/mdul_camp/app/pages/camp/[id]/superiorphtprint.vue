@@ -10,21 +10,22 @@
               <div
                 v-for="(row) in wrapped.data"
                 :key="row.id"
-                class="border py-4 px-8"
+                class="border py-4 px-4"
               >
 
                 <div class="flex justify-between items-center ">
                   <div>
-                    <p class="text-xl font-bold">ชื่อ-สกุล {{ row.firstname }} {{ row.surname }}</p>
-                    <p class="text-xl font-bold">อายุ {{ row.birthdate }} {{ row.region }}</p>
-                    <p class="text-xl font-bold">วันที่ 
+                    <p class="text-xl font-bold mb-4">ชื่อ-สกุล {{ row.firstname }} {{ row.surname }}</p>
+                    <p class="text-xl font-bold mb-4">อายุ {{ row.birthdate }} {{ row.region }}</p>
+                    <p class="text-xl font-bold mb-2">วันที่
                     </p>
                   </div>
                   <div>
-                    <UIcon
-                      name="i-mdi-person-box"
-                      class="w-[20mm] h-[20mm]"
-                    ></UIcon>
+                    <FieldViewImage
+                      :src="row.photo || 'https://img.pikbest.com/origin/10/42/25/82EpIkbEsTvCp.jpg!w700wp'"
+                      class="w-[140px] h-aoto"
+                    >
+                    </FieldViewImage>
                   </div>
                 </div>
               </div>
