@@ -192,7 +192,23 @@ export const appModules = defineAppModules({
         entity: data.membership,
         post: true,
         role: 'menu',
-        actions: ['memberinfo'],
+        actions: [{
+          title: 'ข้อมูลสวนตัว',
+          to: { page: 'memberinfo' },
+          icon: 'i-mdi-user',
+        },{
+          title: 'ค่ายปฎิบัติธรรม',
+          to: { page: 'dharmacamp' },
+          icon: 'i-mdi-table-search',
+        },{
+          title: 'ค่ายที่ลงทะเบียน',
+          to: { page: 'registered' },
+          icon: 'i-mdi-calendar-cursor',
+        },{
+          title: 'ชำระเงิน',
+          to: { page: 'payment' },
+          icon: 'i-mdi-credit-card',
+        },],
       },
       memberinfo: data.membership,
       dharmacamp: data.membership,

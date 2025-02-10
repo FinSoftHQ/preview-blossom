@@ -24,6 +24,10 @@ const headlinks = [{
   label: 'ลงทะเบียน',
   to: '/membership'
 }, 
+{
+  label: 'แอพเจ้าภาพ',
+  to: '/hostapp'
+}, 
 // {
 //   label: 'Products',
 //   to: '/products'
