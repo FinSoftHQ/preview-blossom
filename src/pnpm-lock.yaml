@@ -129,9 +129,15 @@ importers:
       mdul-category:
         specifier: workspace:^
         version: link:../../modules/mdul_category
+      mdul-hostapp:
+        specifier: workspace:^
+        version: link:../../modules/mdul_hostapp
       mdul-membership:
         specifier: workspace:^
         version: link:../../modules/mdul_membership
+      mdul-officerapp:
+        specifier: workspace:^
+        version: link:../../modules/mdul_officerapp
       mdul-products:
         specifier: workspace:^
         version: link:../../modules/mdul_products
