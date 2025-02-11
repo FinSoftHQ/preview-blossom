@@ -12,7 +12,7 @@ const font: Font = {
     data: 'https://cdn.jsdelivr.net/gh/baramee0191/thai-fonts@main/THSarabunNew%20(1).ttf',
   },
   NotoSerifJP: {
-    data: 'http://fonts.gstatic.com/s/pridi/v1/Ihwk-OGVFS69PINILdqAjQ.ttf',
+    data: 'https://fonts.gstatic.com/s/pridi/v1/Ihwk-OGVFS69PINILdqAjQ.ttf',
     fallback: true,
   },
 };
