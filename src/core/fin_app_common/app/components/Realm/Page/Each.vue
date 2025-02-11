@@ -29,7 +29,7 @@ import RealmRolesCustomAddCar from '../Roles/Custom/AddCar.vue';
 import RealmRolesCustomAddBed from '../Roles/Custom/AddBed.vue';
 import RealmRolesCustomDocument  from '../Roles/Custom/Document.vue';
 import RealmRolesWebPrint from '../Roles/Custom/WebPrint.vue';
-
+import RealmRolesEachTakePhoto from '../Roles/Each/TakePhoto.vue';
 // กี้
 
 // เจน
@@ -49,6 +49,7 @@ const roles: Record<string, any> = {
   addbed: RealmRolesCustomAddBed,
   document: RealmRolesCustomDocument,
   webprint: RealmRolesWebPrint,
+  takephoto: RealmRolesEachTakePhoto,
   // กี้
 
   // เจน
