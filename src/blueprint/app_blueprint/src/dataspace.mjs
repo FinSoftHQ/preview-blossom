@@ -644,26 +644,31 @@ export const data = defineEntities({
     ],
     // จำลองจัดผัง
     [
-    {
-      model: 'car',
-      label: 'ที่นั่งรถ',
-      spec: {},
-      component: 'text',
-    },
-    {
-      model: 'bed',
-      label: 'บ้านพัก',
-      spec: {},
-      component: 'text',
-    },
-    {
-      model: 'seat',
-      label: 'ที่นั่งสมาธิ',
-      spec: {},
-      component: 'text',
-    }
-  
-  ],
+      {
+        model: 'car',
+        label: 'ที่นั่งรถ',
+        spec: {},
+        component: 'text',
+      },
+      {
+        model: 'bed',
+        label: 'บ้านพัก',
+        spec: {},
+        component: 'text',
+      },
+      {
+        model: 'seat',
+        label: 'ที่นั่งสมาธิ',
+        spec: {},
+        component: 'text',
+      },
+      {
+        model: 'mobilephoto',
+        label: 'รูปถ่าย',
+        spec: {},
+        component: 'image',
+      }
+    ],
     ],
     sub: [
       {
@@ -943,8 +948,22 @@ export const data = defineEntities({
             component: 'text',
           },
         ],
+      },
+      {
+        name: 'mobilephoto',
+        component: 'entry',
+        fields: [
+          {
+            model: 'photo',
+            label: 'รูปถ่าย',
+            spec: {},
+            component: 'qrcode',
+          },
+
+        ],
       }
     ],
+
   },
 
   mentor: {
@@ -1015,7 +1034,7 @@ export const data = defineEntities({
         label: 'ชื่อเล่น',
         spec: {},
         component: 'text',
-      },     
+      },
       {
         model: 'age',
         label: 'อายุ',

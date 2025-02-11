@@ -6,9 +6,12 @@
           <div
             v-for="(row, index) in wrapped.data"
             :key="row.id"
-            class="border-b border-black border-r p-2"
+            class="border-b border-black border-r p-2 relative"
           >
             <h1 class="text-center text-2xl font-semibold mt-8 mb-4 text-blue-700">{{ row.firstname }}</h1>
+            <div class="absolute top-0 right-0 m-2">
+              <FieldViewQrCode class="w-16 h-16" :modelValue="`https://blossom-preview.netlify.app/officerapp/${row.id}/previewphoto`" />
+            </div>
             <h3 class="text-center text-md text-blue-700">{{ row.surname }}</h3>
             <div class="flex justify-between">
               <p class="text-md font-semibold text-red-700">กลุ่ม {{ row.group }}</p>

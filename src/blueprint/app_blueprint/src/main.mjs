@@ -557,6 +557,7 @@ export const appModules = defineAppModules({
 
   //app เจ้าหน้าที่
   officerapp: {
+    dataPath: 'membership',
     label: 'แอพเจ้าหน้าที่',
     list: {
       root: data.membership,
@@ -579,26 +580,16 @@ export const appModules = defineAppModules({
     each: {
       root: {
         entity: data.membership,
-        actions: [{
-          label: 'ถ่ายรูป',
-          to: { page: 'mobilephoto' },
-        },
-        {
-          label: 'ดูภาพถ่าย',
-          to: { page: 'previewphoto' },
-        }],
+     
       },
       mobilephoto: {
         entity: data.membership,
         post: true,
         role: 'takephoto',
-        subName: 'photo',
+        subName: 'mobilephoto',
       },
       previewphoto: {
         entity: data.membership,
-        post: true,
-        role: 'previewphoto',
-
       },
       close: {
         entity: data.membership,
@@ -607,6 +598,7 @@ export const appModules = defineAppModules({
     },
   },
 
+  // พี่เลี้ยง
   mentor: {
     label: 'พี่เลี้ยง',
     list: {
@@ -644,6 +636,7 @@ export const appModules = defineAppModules({
     },
   },
 
+  // ผู้ประสานงาน
   coordinator: {
     label: 'ผู้ประสานงาน',
     list: {
