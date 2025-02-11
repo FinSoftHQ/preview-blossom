@@ -5,7 +5,7 @@ export default defineNuxtConfig({
   future: {
     compatibilityVersion: 4,
   },
-  extends: ['fin-ready', 'mdul-category', 'mdul-products', 'mdul-camp', 'mdul-membership'],
+  extends: ['fin-ready', 'mdul-category', 'mdul-products', 'mdul-camp', 'mdul-membership' , 'mdul-hostapp', 'mdul-register', 'mdul-officerapp'],
 
   nitro: {
     prerender: {
