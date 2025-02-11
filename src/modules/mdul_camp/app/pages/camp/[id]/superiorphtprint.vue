@@ -22,7 +22,7 @@
                   </div>
                   <div>
                     <FieldViewImage
-                      :src="row.photo || 'https://img.pikbest.com/origin/10/42/25/82EpIkbEsTvCp.jpg!w700wp'"
+                      :src="row.mobilephoto || 'https://img.pikbest.com/origin/10/42/25/82EpIkbEsTvCp.jpg!w700wp'"
                       class="w-[140px] h-aoto"
                     >
                     </FieldViewImage>
