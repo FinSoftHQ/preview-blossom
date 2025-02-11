@@ -5,11 +5,11 @@ export default defineNuxtConfig({
   future: {
     compatibilityVersion: 4,
   },
-  extends: ['fin-ready', 'mdul-category', 'mdul-products', 'mdul-camp', 'mdul-membership' , 'mdul-hostapp', 'mdul-register', 'mdul-officerapp'],
+  extends: ['fin-ready', 'mdul-category', 'mdul-products', 'mdul-camp', 'mdul-membership' , 'mdul-hostapp', 'mdul-officerapp'],
 
   nitro: {
     prerender: {
-      routes: ['/', '/docs', '/docs/getting-started', '/camp', '/membership'],
+      routes: ['/', '/docs', '/docs/getting-started', '/camp', '/membership' , '/products', '/officerapp'],
       crawlLinks: false,
     },
   },
